@@ -5,7 +5,7 @@ import SmallCard from '../Component/SmallCard';
 
 const Bollywood = () => {
     const [detail] = useContext(store);
-    console.log(detail);
+    // console.log(detail);
     return (
         <div>
             <h1 style={{ margin: "20px 10%", display: "inline-block" }}>BOLLYWOOD</h1>
@@ -13,14 +13,14 @@ const Bollywood = () => {
             <div className="main__container">
                 <div className='rightbar'>
                     {
-                        detail.filter((article) => { return article.category === "Bollywood" }).map((n) => (
+                        detail.filter((article) => { return article.category === "Bollywood" }).map((item) => (
                             <Card
-                                key={n.id}
-                                articleid={n.id}
-                                imgUrl={n.img}
-                                title={n.title}
-                                description={n.description.slice(0, 200)}
-                                author={n.author}
+                                key={item.id}
+                                articleid={item.id}
+                                imgUrl={item.img}
+                                title={item.title}
+                                description={item.description.slice(0, 200)}
+                                author={item.author}
                             />
                         ))
                     }
@@ -28,14 +28,14 @@ const Bollywood = () => {
 
                 <div className="sidebar">
                     {
-                        detail.filter((article) => { return article.category === "Bollywood" }).map((n) => (
+                        detail.filter((article) => { return article.category === "Bollywood" }).map((item) => (
                             <SmallCard
-                                key={n.id}
-                                articleid={n.id}
-                                imgUrl={n.img}
-                                description={n.description.slice(0, 200)}
-                                title={n.title.slice(0, 25)}
-                                author={n.author}
+                                key={item.id}
+                                articleid={item.id}
+                                imgUrl={item.img}
+                                description={item.description.slice(0, 200)}
+                                title={item.title.slice(0, 25)}
+                                author={item.author}
                             />
                         ))
                     }

@@ -2,7 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Card = (props) => {
-    const { imgUrl, title, description, techId } = props;
+    // console.log("card prop",props)
+    const { imgUrl, title, description, techId , articleid } = props;
     return (
         // <Link to="/DetailPage">
             <div>
@@ -13,7 +14,8 @@ const Card = (props) => {
                 description: description,
                 id: techId,
             }}
-            to={`${techId}`}
+            // to={`${techId}`}
+            to={`${articleid}`}
         >
             <div >
                 <div className="card__container">

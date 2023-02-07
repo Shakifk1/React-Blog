@@ -6,7 +6,7 @@ import SmallCard from '../Component/SmallCard';
 
 const Food = () => {
     const [detail] = useContext(store);
-    console.log(detail);
+    // console.log(detail);
     return (
         <div>
             <h1 style={{ margin: "20px 10%", display: "inline-block" }}>Food</h1>
@@ -14,13 +14,13 @@ const Food = () => {
             <div className="main__container">
                 <div className='rightbar'>
                     {
-                        detail.filter((article) => { return article.category === "Food" }).map((n) => (
-                            <Card
-                                articleid={n.id}
-                                imgUrl={n.img}
-                                title={n.title}
-                                description={n.description.slice(0, 200)}
-                                author={n.author}
+                        detail.filter((article) => { return article.category === "Food" }).map((item) => (
+                            <Card key={item.id}
+                                articleid={item.id}
+                                imgUrl={item.img}
+                                title={item.title}
+                                description={item.description.slice(0, 200)}
+                                author={item.author}
                             />
                         ))
                     }
@@ -28,13 +28,13 @@ const Food = () => {
 
                 <div className="sidebar">
                     {
-                        detail.filter((article) => { return article.category === "Food" }).map((n) => (
-                            <SmallCard
-                                articleid={n.id}
-                                imgUrl={n.img}
-                                description={n.description.slice(0, 200)}
-                                title={n.title.slice(0, 25)}
-                                author={n.author}
+                        detail.filter((article) => { return article.category === "Food" }).map((item) => (
+                            <SmallCard key={item.id}
+                                articleid={item.id}
+                                imgUrl={item.img}
+                                description={item.description.slice(0, 200)}
+                                title={item.title.slice(0, 25)}
+                                author={item.author}
                             />
                         ))
                     }

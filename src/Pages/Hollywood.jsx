@@ -5,7 +5,7 @@ import SmallCard from '../Component/SmallCard';
 
 const Hollywood = () => {
     const [detail] = useContext(store);
-    console.log(detail);
+    // console.log(detail);
     return (
         <div>
             <h1 style={{ margin: "20px 10%", display: "inline-block" }}>Hollywood</h1>
@@ -13,13 +13,13 @@ const Hollywood = () => {
             <div className="main__container">
                 <div className='rightbar'>
                     {
-                        detail.filter((article) => { return article.category === "Hollywood" }).map((n) => (
+                        detail.filter((article) => { return article.category === "Hollywood" }).map((item) => (
                             <Card
-                                key={n.id}
-                                articleid={n.id}
-                                imgUrl={n.img}
-                                title={n.title}
-                                description={n.description.slice(0, 200)}
+                                key={item.id}
+                                articleid={item.id}
+                                imgUrl={item.img}
+                                title={item.title}
+                                description={item.description.slice(0, 200)}
                             />
                         ))
                     }
@@ -28,13 +28,13 @@ const Hollywood = () => {
 
                 <div className="sidebar">
                     {
-                        detail.filter((article) => { return article.category === "Hollywood" }).map((n) => (
+                        detail.filter((article) => { return article.category === "Hollywood" }).map((item) => (
                             <SmallCard
-                                key={n.id}
-                                articleid={n.id}
-                                imgUrl={n.img}
-                                description={n.description.slice(0, 200)}
-                                title={n.title.slice(0, 25)}
+                                key={item.id}
+                                articleid={item.id}
+                                imgUrl={item.img}
+                                description={item.description.slice(0, 200)}
+                                title={item.title.slice(0, 25)}
                             />
                         ))
                     }

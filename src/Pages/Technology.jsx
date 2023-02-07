@@ -13,27 +13,28 @@ export const Technology = () => {
             <div className="main__container">
                 <div className='rightbar'>
                     {
-                        detail.filter((article) => { return article.category === "Technology" }).map((n) => (<Card
-                            key={n.id}
+                        detail.filter((article) => { return article.category === "Technology" }).map((item) => (<Card
+                            key={item.id}
 
-                            techId={n.id}
-                            imgUrl={n.img}
-                            description={n.description.slice(0, 200)}
-                            title={n.title}
+                            // techId={item.id}
+                            articleid={item.id}
+                            imgUrl={item.img}
+                            description={item.description.slice(0, 200)}
+                            title={item.title}
 
                         />))
                     }
                 </div>
                 <div className="sidebar">
                     {
-                        detail.filter((article) => { return article.category === "Technology" }).map((n) => (
+                        detail.filter((article) => { return article.category === "Technology" }).map((item) => (
                             <SmallCard
-                            key={n.id}
-                                articleid={n.id}
-                                imgUrl={n.img}
-                                description={n.description.slice(0, 200)}
-                                title={n.title.slice(0, 25)}
-                                author={n.author}
+                            key={item.id}
+                                articleid={item.id}
+                                imgUrl={item.img}
+                                description={item.description.slice(0, 200)}
+                                title={item.title.slice(0, 25)}
+                                author={item.author}
                             />
                         ))
                     }
